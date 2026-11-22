@@ -28,12 +28,4 @@
     };
     requestAnimationFrame(tick);
   }
-
-  // The opening leaves the page once it has played (or at once if it was skipped).
-  const intro = document.querySelector(".intro");
-  if (intro) {
-    const done = () => intro.remove();
-    if (document.documentElement.classList.contains("no-intro") || reduced) done();
-    else intro.addEventListener("animationend", (e) => { if (e.target === intro) done(); });
-  }
 })();

@@ -6,10 +6,6 @@
   <title>Essência Serrana — Ateliê &amp; Saboaria · Serra Catarinense</title>
   <meta name="description" content="Ateliê e saboaria artesanal na Serra Catarinense: sabonetes, velas aromáticas, imagens em gesso pintadas à mão e pratos decorativos. Artesanal, natural e com afeto.">
   <meta name="theme-color" content="#fffdf8">
-  <script>
-    /* A abertura (o emblema desenhado) aparece uma vez por visita. */
-    try { if (sessionStorage.getItem("es-intro")) document.documentElement.classList.add("no-intro"); sessionStorage.setItem("es-intro", "1"); } catch (e) { document.documentElement.classList.add("no-intro"); }
-  </script>
   <link rel="icon" href="images/logo-marca.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +27,72 @@
   </g>
   <g class="es-ramos" fill="#7f8763" stroke="#7f8763" stroke-width="1"><path class="es-draw" pathLength="1" d="M111 199 Q86 191 58 200" fill="none"/><ellipse cx="103.1" cy="192.2" rx="5.2" ry="2" transform="rotate(35 103.1 192.2)"/><ellipse cx="103.1" cy="199.2" rx="4.6" ry="1.8" transform="rotate(-35 103.1 199.2)"/><ellipse cx="96.3" cy="190.1" rx="5.2" ry="2" transform="rotate(31 96.3 190.1)"/><ellipse cx="96.3" cy="197.1" rx="4.6" ry="1.8" transform="rotate(-31 96.3 197.1)"/><ellipse cx="89.4" cy="189.0" rx="5.2" ry="2" transform="rotate(27 89.4 189.0)"/><ellipse cx="89.4" cy="196.0" rx="4.6" ry="1.8" transform="rotate(-27 89.4 196.0)"/><ellipse cx="82.6" cy="189.3" rx="5.2" ry="2" transform="rotate(23 82.6 189.3)"/><ellipse cx="82.6" cy="196.3" rx="4.6" ry="1.8" transform="rotate(-23 82.6 196.3)"/><ellipse cx="75.7" cy="191.0" rx="5.2" ry="2" transform="rotate(19 75.7 191.0)"/><ellipse cx="75.7" cy="198.0" rx="4.6" ry="1.8" transform="rotate(-19 75.7 198.0)"/><ellipse cx="68.9" cy="193.7" rx="5.2" ry="2" transform="rotate(15 68.9 193.7)"/><ellipse cx="68.9" cy="200.7" rx="4.6" ry="1.8" transform="rotate(-15 68.9 200.7)"/><path class="es-draw" pathLength="1" d="M129 199 Q154 191 182 200" fill="none"/><ellipse cx="136.9" cy="192.2" rx="5.2" ry="2" transform="rotate(-35 136.9 192.2)"/><ellipse cx="136.9" cy="199.2" rx="4.6" ry="1.8" transform="rotate(35 136.9 199.2)"/><ellipse cx="143.7" cy="190.1" rx="5.2" ry="2" transform="rotate(-31 143.7 190.1)"/><ellipse cx="143.7" cy="197.1" rx="4.6" ry="1.8" transform="rotate(31 143.7 197.1)"/><ellipse cx="150.6" cy="189.0" rx="5.2" ry="2" transform="rotate(-27 150.6 189.0)"/><ellipse cx="150.6" cy="196.0" rx="4.6" ry="1.8" transform="rotate(27 150.6 196.0)"/><ellipse cx="157.4" cy="189.3" rx="5.2" ry="2" transform="rotate(-23 157.4 189.3)"/><ellipse cx="157.4" cy="196.3" rx="4.6" ry="1.8" transform="rotate(23 157.4 196.3)"/><ellipse cx="164.3" cy="191.0" rx="5.2" ry="2" transform="rotate(-19 164.3 191.0)"/><ellipse cx="164.3" cy="198.0" rx="4.6" ry="1.8" transform="rotate(19 164.3 198.0)"/><ellipse cx="171.1" cy="193.7" rx="5.2" ry="2" transform="rotate(-15 171.1 193.7)"/><ellipse cx="171.1" cy="200.7" rx="4.6" ry="1.8" transform="rotate(15 171.1 200.7)"/></g>
   <g class="es-pinha"><ellipse cx="120" cy="198" rx="9.5" ry="12.5" fill="#b8955a"/><g fill="none" stroke="#8a6c3a" stroke-width="0.9"><path d="M111.0 190.0 Q114.0 194.5 117.0 190.0"/><path d="M117.0 190.0 Q120.0 194.5 123.0 190.0"/><path d="M123.0 190.0 Q126.0 194.5 129.0 190.0"/><path d="M114.0 195.5 Q117.0 200.0 120.0 195.5"/><path d="M120.0 195.5 Q123.0 200.0 126.0 195.5"/><path d="M126.0 195.5 Q129.0 200.0 132.0 195.5"/><path d="M111.0 201.0 Q114.0 205.5 117.0 201.0"/><path d="M117.0 201.0 Q120.0 205.5 123.0 201.0"/><path d="M123.0 201.0 Q126.0 205.5 129.0 201.0"/><path d="M117.0 206.5 Q120.0 211.0 123.0 206.5"/><path d="M123.0 206.5 Q126.0 211.0 129.0 206.5"/></g></g></svg></div>
+  <script>
+    /* A abertura: o emblema se desenha (serra, tronco, galhos, copa, ramos e pinha) e a tela voa para dentro dele.
+       Toca a cada visita, como na referência. Com "reduzir movimento", o emblema aparece pronto e some suave.
+       Os traços são medidos aqui (getTotalLength), sem depender de pathLength, que o Safari trata diferente. */
+    (function () {
+      var el = document.querySelector(".intro"), root = document.documentElement;
+      if (!el) return;
+      var gone = false;
+      var drop = function () { if (gone) return; gone = true; root.classList.remove("intro-playing"); if (el.parentNode) el.parentNode.removeChild(el); };
+      try {
+        if (!el.animate) { drop(); return; }
+        var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var svg = el.querySelector("svg"), E = "cubic-bezier(0.22, 1, 0.36, 1)", IO = "cubic-bezier(0.65, 0, 0.35, 1)", anims = [];
+        var all = function (s) { return [].slice.call(svg.querySelectorAll(s)); };
+        var A = function (node, kf, o) { o.fill = "both"; var a = node.animate(kf, o); anims.push(a); return a; };
+        el.classList.add("is-js");
+        root.classList.add("intro-playing");
+        var showPage = function () {
+          if (!root.classList.contains("intro-playing")) return;
+          root.classList.remove("intro-playing");
+          var home = document.querySelector(".home");
+          if (home && !reduce) home.animate([{ opacity: 0, transform: "scale(1.02)" }, { opacity: 1, transform: "none" }], { duration: 1000, easing: E });
+        };
+        var leave = function (delay) {
+          var a = A(el, [{ opacity: 1 }, { opacity: 0 }], { duration: reduce ? 500 : 700, delay: delay, easing: E });
+          setTimeout(showPage, delay);
+          a.onfinish = drop;
+        };
+        all(".es-draw").forEach(function (p) { var L = p.getTotalLength(); p.style.strokeDasharray = L + " " + (L + 4); p.style.strokeDashoffset = reduce ? 0 : L; p.esL = L; });
+        var draw = function (p, delay, duration) { A(p, [{ strokeDashoffset: p.esL }, { strokeDashoffset: 0 }], { duration: duration, delay: delay, easing: IO }); };
+        el.addEventListener("click", function () { anims.forEach(function (a) { a.cancel(); }); showPage(); drop(); });
+        // The page opens only once it has loaded (fonts, styles), as the reference waits for "ready";
+        // never later than 6 seconds after the drawing began.
+        var loaded = document.readyState === "complete";
+        if (!loaded) addEventListener("load", function () { loaded = true; });
+        var whenReady = function (minMs, fn) {
+          var t0 = Date.now();
+          (function check() { if ((loaded && Date.now() - t0 >= minMs) || Date.now() - t0 > 6000) fn(); else setTimeout(check, 50); })();
+        };
+        // The drawing starts on the first frame the screen actually shows, so a slow phone never skips it.
+        var start = function () {
+          if (reduce) { whenReady(900, function () { leave(0); }); return; }
+          all(".es-serra .es-draw").forEach(function (p, i) { draw(p, [100, 250, 600, 600][i] || 600, i < 2 ? 1200 : 700); });
+          var trunk = svg.querySelector(".es-trunk");
+          A(trunk, [{ transform: "scaleY(0)" }, { transform: "scaleY(1)" }], { duration: 900, delay: 350, easing: E });
+          all(".es-branches .es-draw").forEach(function (p) { draw(p, 800, 700); });
+          all(".es-tuft").forEach(function (t, i) { A(t, [{ transform: "scale(0)", opacity: 0 }, { transform: "scale(1)", opacity: 1 }], { duration: 500, delay: 1050 + i * 45, easing: E }); });
+          [svg.querySelector(".es-ramos"), svg.querySelector(".es-pinha")].forEach(function (g) { A(g, [{ opacity: 0 }, { opacity: 1 }], { duration: 600, delay: 1650, easing: E }); });
+          all(".es-ramos .es-draw").forEach(function (p) { draw(p, 1650, 600); });
+          whenReady(2250, function () {
+            A(svg, [{ transform: "scale(1)", opacity: 1 }, { transform: "scale(7)", opacity: 0 }], { duration: 900, easing: "cubic-bezier(0.7, 0, 0.84, 0)" });
+            leave(200);
+          });
+        };
+        // Until then the drawing waits at its first frame (nothing drawn yet).
+        if (!reduce) {
+          all(".es-trunk").forEach(function (t) { t.style.transform = "scaleY(0)"; });
+          all(".es-tuft, .es-ramos, .es-pinha").forEach(function (t) { t.style.opacity = "0"; });
+        }
+        requestAnimationFrame(function () { requestAnimationFrame(function () {
+          all(".es-trunk, .es-tuft, .es-ramos, .es-pinha").forEach(function (t) { t.style.transform = ""; t.style.opacity = ""; });
+          start();
+        }); });
+      } catch (e) { drop(); }
+    })();
+  </script>
   <a class="skip" href="#stage">Pular para o conteúdo</a>
 
   <header class="shell" data-shell>

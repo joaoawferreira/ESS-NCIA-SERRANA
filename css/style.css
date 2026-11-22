@@ -331,32 +331,18 @@ html.page-home { --bg: var(--paper); background: var(--paper); }
   .page-home .pager { left: 50%; right: auto; transform: translateX(-50%); bottom: calc(0.75rem - 5px); }
 }
 
-/* ---------- The opening: the emblem draws itself, then the view flies into it ---------- */
-.intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: var(--paper); animation: intro-out 0.7s var(--ease) 2.45s forwards; }
-html.no-intro .intro { display: none; }
-.es-emblem-intro { width: min(46vmin, 340px); transform-origin: 50% 62%; animation: intro-zoom 0.9s cubic-bezier(0.7, 0, 0.84, 0) 2.25s forwards; }
-.intro .es-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: es-draw 1.2s var(--ease-io) forwards; }
-.intro .es-serra .es-draw:nth-child(1) { animation-delay: 0.1s; }
-.intro .es-serra .es-draw:nth-child(2) { animation-delay: 0.25s; }
-.intro .es-serra .es-draw:nth-child(n+3) { animation-delay: 0.6s; animation-duration: 0.7s; }
-.intro .es-trunk { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); animation: es-grow 0.9s var(--ease) 0.35s forwards; }
-.intro .es-branches .es-draw { animation-duration: 0.7s; animation-delay: 0.8s; }
-.intro .es-tuft { transform-box: fill-box; transform-origin: center; transform: scale(0); opacity: 0; animation: es-pop 0.5s var(--ease) forwards; animation-delay: calc(1.05s + var(--i) * 45ms); }
-.intro .es-ramos, .intro .es-pinha { opacity: 0; animation: es-fade 0.6s var(--ease) 1.65s forwards; }
-.intro .es-ramos .es-draw { animation-delay: 1.65s; animation-duration: 0.6s; }
-.page-home .home { animation: home-in 1s var(--ease) 2.55s both; }
-html.no-intro .home { animation: none; }
-@keyframes es-draw { to { stroke-dashoffset: 0; } }
-@keyframes es-grow { to { transform: none; } }
-@keyframes es-pop { to { transform: none; opacity: 1; } }
-@keyframes es-fade { to { opacity: 1; } }
-@keyframes intro-zoom { to { transform: scale(7); opacity: 0; } }
+/* ---------- The opening: the emblem draws itself, then the view flies into it (driven by the inline script) ---------- */
+.intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: var(--paper); cursor: pointer;
+  animation: intro-out 0.5s var(--ease) 4s forwards; }        /* a safety net if the script never runs */
+.intro.is-js { animation: none; }
+.intro:not(.is-js) svg { visibility: hidden; }
+/* The mark: 58% of the width on phones, 400px on laptops, up to 600px on large screens (as the reference). */
+.es-emblem-intro { width: min(58vw, 600px, 78vh, max(400px, 24vw)); height: auto; transform-origin: 50% 62%; overflow: visible; }
+.intro .es-trunk, .intro .es-tuft { transform-box: fill-box; }
+.intro .es-trunk { transform-origin: 50% 100%; }
+.intro .es-tuft { transform-origin: 50% 50%; }
+html.intro-playing .home { opacity: 0; }
 @keyframes intro-out { to { opacity: 0; visibility: hidden; } }
-@keyframes home-in { from { opacity: 0; transform: scale(1.02); } }
-@media (prefers-reduced-motion: reduce) {
-  .intro { display: none; }
-  .page-home .home { animation: none; }
-}
 .pager-arrow { text-decoration: none; }
 /* Phones and tablets: the Ateliê page can be taller than the screen, so its page arrows close the page. */
 @media (max-width: 899px) {
