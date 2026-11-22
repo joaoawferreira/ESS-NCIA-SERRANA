@@ -349,3 +349,30 @@ html.intro-playing .home { opacity: 0; }
   .page-home .stage-index { padding-bottom: 2rem; }
   .page-home .pager { position: static; transform: none; justify-content: center; margin: 0 auto; padding: 0 1.25rem 1.5rem; }
 }
+
+/* =====================================================================
+   A serra ao fundo: araucárias, pinheiros e copas redondas em traço fino, bem claras.
+   Um desenho só, recortado como máscara, então cada sala pinta com a sua cor.
+   ===================================================================== */
+.scenery {
+  position: absolute; left: 0; bottom: calc(max(25svh, 7.5rem) - 1.25rem); z-index: 0;
+  width: 900vw; height: 54vh; pointer-events: none; will-change: transform;
+  background: var(--room-fg, var(--ink)); opacity: 0.12;
+  -webkit-mask: url("../images/serra-galeria.svg") left bottom / auto 100% repeat-x;
+          mask: url("../images/serra-galeria.svg") left bottom / auto 100% repeat-x;
+}
+.chapter[data-ground="moss"] .scenery { opacity: 0.09; }
+.chapter[data-ground="ink"] .scenery { opacity: 0.08; }
+.wall { z-index: 1; }
+
+.home-scenery {
+  position: fixed; left: var(--nav-w); right: 0; bottom: 0; z-index: 0; height: 62vh; pointer-events: none; will-change: transform;
+  background: var(--ink); opacity: 0.09;
+  -webkit-mask: url("../images/serra-atelie.svg") right bottom / auto 100% no-repeat;
+          mask: url("../images/serra-atelie.svg") right bottom / auto 100% no-repeat;
+}
+.page-home .stage-index { position: relative; z-index: 1; }
+@media (max-width: 899px) {
+  .scenery { height: 40vh; }
+  .home-scenery { left: 0; height: 38vh; opacity: 0.08; -webkit-mask-position: 70% bottom; mask-position: 70% bottom; }
+}

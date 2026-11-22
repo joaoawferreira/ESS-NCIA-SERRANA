@@ -28,9 +28,13 @@
     pin.className = "wall-pin";
     const light = document.createElement("div");
     light.className = "light";
+    // The serra behind the wall: a faint line drawing that walks at a third of the wall's pace.
+    const scenery = document.createElement("div");
+    scenery.className = "scenery";
+    scenery.setAttribute("aria-hidden", "true");
     wall.before(pin);
-    pin.append(wall, light);
-    return { ch, wall, pin, light, head: ch.querySelector(".chapter-head"), bench: wall.querySelector(".bench"),
+    pin.append(scenery, wall, light);
+    return { ch, wall, pin, light, scenery, head: ch.querySelector(".chapter-head"), bench: wall.querySelector(".bench"),
       works: [...wall.querySelectorAll("[data-work]")], travel: 0, top: 0 };
   });
   const works = rooms.flatMap((r) => r.works);
@@ -137,6 +141,9 @@
         r.wall.style.removeProperty("--label-h");
         size(0);
       }
+      // The serra's ground sits just under the works' floor line (on a phone, under the works, above their labels).
+      const ground = isPhone ? floor + (parseFloat(r.wall.style.getPropertyValue("--label-h")) || 0) + drop : floor;
+      r.scenery.style.bottom = `${Math.round(ground - 1.25 * rem)}px`;
       // A room ends when its last work stands in the middle of a phone; elsewhere, at the wall's end.
       const last = r.works[r.works.length - 1];
       r.travel = isPhone || touch
@@ -192,7 +199,11 @@
       const into = clamp(y - r.top, 0, r.travel);
       r._into = into;
       r._pinTop = y < r.top ? r.top - y : y > r.top + r.travel ? r.top + r.travel - y : 0;
-      if (r._shown !== into) { r._shown = into; r.wall.style.transform = `translate3d(${-into}px, 0, 0)`; }
+      if (r._shown !== into) {
+        r._shown = into;
+        r.wall.style.transform = `translate3d(${-into}px, 0, 0)`;
+        r.scenery.style.transform = `translate3d(${(-into * 0.35).toFixed(1)}px, 0, 0)`;
+      }
       if (y >= r.top - vh * 0.5) active = r;
     });
     const ground = active.ch.dataset.ground;

@@ -16,6 +16,9 @@
   const fig = document.querySelector("[data-depth]");
   if (fig && !reduced && finePointer) {
     const layers = [...fig.querySelectorAll("[data-depth-layer]")];
+    // The serra behind the page drifts least, the far plane of the same depth.
+    const scenery = document.querySelector("[data-scenery]");
+    if (scenery) { scenery.dataset.depthLayer = "0.5"; layers.push(scenery); }
     let tx = 0, ty = 0, cx = 0, cy = 0;
     addEventListener("pointermove", (e) => { tx = e.clientX / innerWidth - 0.5; ty = e.clientY / innerHeight - 0.5; });
     const tick = () => {
