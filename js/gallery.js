@@ -262,6 +262,7 @@
   let keyTo = null;
   addEventListener("keydown", (e) => {
     if (!["ArrowRight", "ArrowLeft"].includes(e.key) || e.metaKey || e.ctrlKey || e.altKey) return;
+    if (root.classList.contains("has-modal")) return;   // the contact window keeps the keys
     e.preventDefault();
     const from = keyTo !== null && Math.abs(keyTo - scrollY) > 2 ? keyTo : scrollY;
     keyTo = clamp(from + (e.key === "ArrowRight" ? 1 : -1) * innerHeight * 0.18, 0, document.documentElement.scrollHeight - innerHeight);

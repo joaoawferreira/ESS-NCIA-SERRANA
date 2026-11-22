@@ -376,3 +376,21 @@ html.intro-playing .home { opacity: 0; }
   .scenery { height: 40vh; }
   .home-scenery { left: 0; height: 38vh; opacity: 0.08; -webkit-mask-position: 70% bottom; mask-position: 70% bottom; }
 }
+
+/* =====================================================================
+   Contato: a janela da referência, com WhatsApp e Instagram.
+   ===================================================================== */
+button.link-button { padding: 0; border: 0; background: none; font: inherit; font-size: 0.95rem; cursor: pointer; text-align: left; }
+.modal { position: fixed; inset: 0; z-index: 70; display: grid; place-items: center; }
+.modal[hidden] { display: none; }
+.modal-backdrop { position: absolute; inset: 0; border: 0; padding: 0; background: rgb(18 10 9 / 55%); cursor: pointer; }
+.modal-window { position: relative; width: min(34rem, 92vw); padding: clamp(1.8rem, 4vw, 3rem); background: var(--paper); color: var(--ink); }
+.modal-title { margin: 0; font-weight: 300; font-size: 2.2rem; font-style: italic; line-height: 1.15; }
+.modal-sub { margin: 0.4rem 0 0; color: #7a6560; }
+.modal-close { position: absolute; top: 0.8rem; right: 1rem; padding: 0; border: 0; background: none; color: var(--ink); font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.modal-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.4rem 0 0; }
+.modal .pill { border-color: rgb(29 20 16 / 18%); color: var(--ink); background: none; }
+.modal .pill:hover, .modal .pill:focus-visible { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.modal .pill-ink { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.modal .pill-ink:hover, .modal .pill-ink:focus-visible { background: var(--rose); border-color: var(--rose); color: var(--paper); }
+@media (max-width: 899px) { button.link-button { font-size: 1.1rem; } }

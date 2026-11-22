@@ -110,7 +110,7 @@
       </ol>
       <div class="nav-secondary">
         <a class="link-button" href="https://wa.me/554999596550?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ess%C3%AAncia%20Serrana%20e%20gostaria%20de%20fazer%20uma%20encomenda." target="_blank" rel="noopener">Encomendas</a>
-        <a class="link-button" href="https://wa.me/554999596550?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ess%C3%AAncia%20Serrana." target="_blank" rel="noopener" aria-label="Contato pelo WhatsApp: (49) 9959-6550">Contato</a>
+        <button class="link-button" type="button" data-open-contato aria-haspopup="dialog" aria-controls="contato">Contato</button>
       </div>
     </nav>
   </header>
@@ -161,6 +161,16 @@
     <a class="pager-arrow" href="galeria.html" aria-label="Galeria">&rarr;</a>
   </nav>
 
+  <div class="modal" id="contato" role="dialog" aria-modal="true" aria-labelledby="contato-title" hidden>
+    <button class="modal-backdrop" type="button" aria-label="Fechar" data-close></button>
+    <div class="modal-window">
+      <button class="modal-close" type="button" aria-label="Fechar" data-close>&times;</button>
+      <h2 class="modal-title" id="contato-title">Dúvidas ou encomendas?</h2>
+      <p class="modal-sub">Fale com o ateliê</p>
+      <p class="modal-actions"><a class="pill pill-ink" href="https://wa.me/554999596550?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Ess%C3%AAncia%20Serrana." target="_blank" rel="noopener">WhatsApp</a><a class="pill" href="https://www.instagram.com/essenciaserrana/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
   <script src="js/atelie.js"></script>
+  <script src="js/contato.js"></script>
 </body>
 </html>
