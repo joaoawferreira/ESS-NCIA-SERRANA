@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-ground="paper">
+<html lang="pt-BR" data-ground="paper" class="page-home">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Galeria · Essência Serrana — Ateliê e Saboaria Artesanal</title>
-  <meta name="description" content="Velas aromáticas, sabonetes artesanais e imagens em gesso pintadas à mão. Feito na Serra Catarinense.">
-  <meta name="theme-color" content="#efe9e1">
+  <title>Essência Serrana — Ateliê &amp; Saboaria · Serra Catarinense</title>
+  <meta name="description" content="Ateliê e saboaria artesanal na Serra Catarinense: sabonetes, velas aromáticas, imagens em gesso pintadas à mão e pratos decorativos. Artesanal, natural e com afeto.">
+  <meta name="theme-color" content="#fffdf8">
+  <script>
+    /* A abertura (o emblema desenhado) aparece uma vez por visita. */
+    try { if (sessionStorage.getItem("es-intro")) document.documentElement.classList.add("no-intro"); sessionStorage.setItem("es-intro", "1"); } catch (e) { document.documentElement.classList.add("no-intro"); }
+  </script>
+  <link rel="icon" href="images/logo-marca.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap">
-  <link rel="icon" href="images/ig-logo.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="intro" aria-hidden="true"><svg class="es-emblem es-emblem-intro" viewBox="0 0 240 216" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g class="es-serra" fill="none" stroke="#c9b79a" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+    <path class="es-draw" pathLength="1" d="M8 176 L44 134 L58 146 L80 116 L104 150"/>
+    <path class="es-draw" pathLength="1" d="M136 150 L158 114 L174 134 L190 120 L232 176"/>
+    <path class="es-draw" pathLength="1" d="M80 116 L74 132 L84 128 L90 140"/>
+    <path class="es-draw" pathLength="1" d="M158 114 L164 128 L156 126 L152 138"/>
+  </g>
+  <g class="es-tree">
+    <path class="es-trunk" fill="#3e4733" d="M117.6 192 L119.2 34 L120.8 34 L122.4 192 Z"/>
+    <g class="es-branches" fill="none" stroke="#3e4733" stroke-width="2" stroke-linecap="round"><path class="es-draw" pathLength="1" d="M120 61.4 Q114.9 57.4 103.0 48.0"/><path class="es-draw" pathLength="1" d="M120 61.4 Q125.1 57.4 137.0 48.0"/><path class="es-draw" pathLength="1" d="M120 76.7 Q109.8 72.7 86.0 62.0"/><path class="es-draw" pathLength="1" d="M120 76.7 Q130.2 72.7 154.0 62.0"/><path class="es-draw" pathLength="1" d="M120 72.8 Q117.0 68.8 110.0 60.0"/><path class="es-draw" pathLength="1" d="M120 72.8 Q123.0 68.8 130.0 60.0"/><path class="es-draw" pathLength="1" d="M120 94.0 Q105.0 90.0 70.0 78.0"/><path class="es-draw" pathLength="1" d="M120 94.0 Q135.0 90.0 170.0 78.0"/><path class="es-draw" pathLength="1" d="M120 90.0 Q112.5 86.0 95.0 76.0"/><path class="es-draw" pathLength="1" d="M120 90.0 Q127.5 86.0 145.0 76.0"/><path class="es-draw" pathLength="1" d="M120 112.1 Q100.8 108.1 56.0 95.0"/><path class="es-draw" pathLength="1" d="M120 112.1 Q139.2 108.1 184.0 95.0"/><path class="es-draw" pathLength="1" d="M120 108.2 Q108.0 104.2 80.0 93.0"/><path class="es-draw" pathLength="1" d="M120 108.2 Q132.0 104.2 160.0 93.0"/><path class="es-draw" pathLength="1" d="M120 126.0 Q105.0 122.0 70.0 110.0"/><path class="es-draw" pathLength="1" d="M120 126.0 Q135.0 122.0 170.0 110.0"/></g>
+    <g class="es-crown" fill="#3e4733"><g class="es-tuft" style="--i:0" transform-origin="120.0 30.0"><circle cx="120.0" cy="30.0" r="9.0"/><circle cx="113.3" cy="33.1" r="6.1"/><circle cx="126.8" cy="33.1" r="6.1"/><circle cx="120.0" cy="25.1" r="5.4"/></g><g class="es-tuft" style="--i:1" transform-origin="103.0 44.0"><circle cx="103.0" cy="44.0" r="8.0"/><circle cx="97.0" cy="46.8" r="5.4"/><circle cx="109.0" cy="46.8" r="5.4"/><circle cx="103.0" cy="39.6" r="4.8"/></g><g class="es-tuft" style="--i:2" transform-origin="137.0 44.0"><circle cx="137.0" cy="44.0" r="8.0"/><circle cx="131.0" cy="46.8" r="5.4"/><circle cx="143.0" cy="46.8" r="5.4"/><circle cx="137.0" cy="39.6" r="4.8"/></g><g class="es-tuft" style="--i:3" transform-origin="86.0 58.0"><circle cx="86.0" cy="58.0" r="9.0"/><circle cx="79.3" cy="61.1" r="6.1"/><circle cx="92.8" cy="61.1" r="6.1"/><circle cx="86.0" cy="53.0" r="5.4"/></g><g class="es-tuft" style="--i:4" transform-origin="154.0 58.0"><circle cx="154.0" cy="58.0" r="9.0"/><circle cx="147.3" cy="61.1" r="6.1"/><circle cx="160.8" cy="61.1" r="6.1"/><circle cx="154.0" cy="53.0" r="5.4"/></g><g class="es-tuft" style="--i:5" transform-origin="110.0 56.0"><circle cx="110.0" cy="56.0" r="6.5"/><circle cx="105.1" cy="58.3" r="4.4"/><circle cx="114.9" cy="58.3" r="4.4"/><circle cx="110.0" cy="52.4" r="3.9"/></g><g class="es-tuft" style="--i:6" transform-origin="130.0 56.0"><circle cx="130.0" cy="56.0" r="6.5"/><circle cx="125.1" cy="58.3" r="4.4"/><circle cx="134.9" cy="58.3" r="4.4"/><circle cx="130.0" cy="52.4" r="3.9"/></g><g class="es-tuft" style="--i:7" transform-origin="70.0 74.0"><circle cx="70.0" cy="74.0" r="9.5"/><circle cx="62.9" cy="77.3" r="6.5"/><circle cx="77.1" cy="77.3" r="6.5"/><circle cx="70.0" cy="68.8" r="5.7"/></g><g class="es-tuft" style="--i:8" transform-origin="170.0 74.0"><circle cx="170.0" cy="74.0" r="9.5"/><circle cx="162.9" cy="77.3" r="6.5"/><circle cx="177.1" cy="77.3" r="6.5"/><circle cx="170.0" cy="68.8" r="5.7"/></g><g class="es-tuft" style="--i:9" transform-origin="95.0 72.0"><circle cx="95.0" cy="72.0" r="7.5"/><circle cx="89.4" cy="74.6" r="5.1"/><circle cx="100.6" cy="74.6" r="5.1"/><circle cx="95.0" cy="67.9" r="4.5"/></g><g class="es-tuft" style="--i:10" transform-origin="145.0 72.0"><circle cx="145.0" cy="72.0" r="7.5"/><circle cx="139.4" cy="74.6" r="5.1"/><circle cx="150.6" cy="74.6" r="5.1"/><circle cx="145.0" cy="67.9" r="4.5"/></g><g class="es-tuft" style="--i:11" transform-origin="56.0 91.0"><circle cx="56.0" cy="91.0" r="9.0"/><circle cx="49.3" cy="94.2" r="6.1"/><circle cx="62.8" cy="94.2" r="6.1"/><circle cx="56.0" cy="86.0" r="5.4"/></g><g class="es-tuft" style="--i:12" transform-origin="184.0 91.0"><circle cx="184.0" cy="91.0" r="9.0"/><circle cx="177.3" cy="94.2" r="6.1"/><circle cx="190.8" cy="94.2" r="6.1"/><circle cx="184.0" cy="86.0" r="5.4"/></g><g class="es-tuft" style="--i:13" transform-origin="80.0 89.0"><circle cx="80.0" cy="89.0" r="8.0"/><circle cx="74.0" cy="91.8" r="5.4"/><circle cx="86.0" cy="91.8" r="5.4"/><circle cx="80.0" cy="84.6" r="4.8"/></g><g class="es-tuft" style="--i:14" transform-origin="160.0 89.0"><circle cx="160.0" cy="89.0" r="8.0"/><circle cx="154.0" cy="91.8" r="5.4"/><circle cx="166.0" cy="91.8" r="5.4"/><circle cx="160.0" cy="84.6" r="4.8"/></g><g class="es-tuft" style="--i:15" transform-origin="70.0 106.0"><circle cx="70.0" cy="106.0" r="7.5"/><circle cx="64.4" cy="108.6" r="5.1"/><circle cx="75.6" cy="108.6" r="5.1"/><circle cx="70.0" cy="101.9" r="4.5"/></g><g class="es-tuft" style="--i:16" transform-origin="170.0 106.0"><circle cx="170.0" cy="106.0" r="7.5"/><circle cx="164.4" cy="108.6" r="5.1"/><circle cx="175.6" cy="108.6" r="5.1"/><circle cx="170.0" cy="101.9" r="4.5"/></g></g>
+  </g>
+  <g class="es-ramos" fill="#7f8763" stroke="#7f8763" stroke-width="1"><path class="es-draw" pathLength="1" d="M111 199 Q86 191 58 200" fill="none"/><ellipse cx="103.1" cy="192.2" rx="5.2" ry="2" transform="rotate(35 103.1 192.2)"/><ellipse cx="103.1" cy="199.2" rx="4.6" ry="1.8" transform="rotate(-35 103.1 199.2)"/><ellipse cx="96.3" cy="190.1" rx="5.2" ry="2" transform="rotate(31 96.3 190.1)"/><ellipse cx="96.3" cy="197.1" rx="4.6" ry="1.8" transform="rotate(-31 96.3 197.1)"/><ellipse cx="89.4" cy="189.0" rx="5.2" ry="2" transform="rotate(27 89.4 189.0)"/><ellipse cx="89.4" cy="196.0" rx="4.6" ry="1.8" transform="rotate(-27 89.4 196.0)"/><ellipse cx="82.6" cy="189.3" rx="5.2" ry="2" transform="rotate(23 82.6 189.3)"/><ellipse cx="82.6" cy="196.3" rx="4.6" ry="1.8" transform="rotate(-23 82.6 196.3)"/><ellipse cx="75.7" cy="191.0" rx="5.2" ry="2" transform="rotate(19 75.7 191.0)"/><ellipse cx="75.7" cy="198.0" rx="4.6" ry="1.8" transform="rotate(-19 75.7 198.0)"/><ellipse cx="68.9" cy="193.7" rx="5.2" ry="2" transform="rotate(15 68.9 193.7)"/><ellipse cx="68.9" cy="200.7" rx="4.6" ry="1.8" transform="rotate(-15 68.9 200.7)"/><path class="es-draw" pathLength="1" d="M129 199 Q154 191 182 200" fill="none"/><ellipse cx="136.9" cy="192.2" rx="5.2" ry="2" transform="rotate(-35 136.9 192.2)"/><ellipse cx="136.9" cy="199.2" rx="4.6" ry="1.8" transform="rotate(35 136.9 199.2)"/><ellipse cx="143.7" cy="190.1" rx="5.2" ry="2" transform="rotate(-31 143.7 190.1)"/><ellipse cx="143.7" cy="197.1" rx="4.6" ry="1.8" transform="rotate(31 143.7 197.1)"/><ellipse cx="150.6" cy="189.0" rx="5.2" ry="2" transform="rotate(-27 150.6 189.0)"/><ellipse cx="150.6" cy="196.0" rx="4.6" ry="1.8" transform="rotate(27 150.6 196.0)"/><ellipse cx="157.4" cy="189.3" rx="5.2" ry="2" transform="rotate(-23 157.4 189.3)"/><ellipse cx="157.4" cy="196.3" rx="4.6" ry="1.8" transform="rotate(23 157.4 196.3)"/><ellipse cx="164.3" cy="191.0" rx="5.2" ry="2" transform="rotate(-19 164.3 191.0)"/><ellipse cx="164.3" cy="198.0" rx="4.6" ry="1.8" transform="rotate(19 164.3 198.0)"/><ellipse cx="171.1" cy="193.7" rx="5.2" ry="2" transform="rotate(-15 171.1 193.7)"/><ellipse cx="171.1" cy="200.7" rx="4.6" ry="1.8" transform="rotate(15 171.1 200.7)"/></g>
+  <g class="es-pinha"><ellipse cx="120" cy="198" rx="9.5" ry="12.5" fill="#b8955a"/><g fill="none" stroke="#8a6c3a" stroke-width="0.9"><path d="M111.0 190.0 Q114.0 194.5 117.0 190.0"/><path d="M117.0 190.0 Q120.0 194.5 123.0 190.0"/><path d="M123.0 190.0 Q126.0 194.5 129.0 190.0"/><path d="M114.0 195.5 Q117.0 200.0 120.0 195.5"/><path d="M120.0 195.5 Q123.0 200.0 126.0 195.5"/><path d="M126.0 195.5 Q129.0 200.0 132.0 195.5"/><path d="M111.0 201.0 Q114.0 205.5 117.0 201.0"/><path d="M117.0 201.0 Q120.0 205.5 123.0 201.0"/><path d="M123.0 201.0 Q126.0 205.5 129.0 201.0"/><path d="M117.0 206.5 Q120.0 211.0 123.0 206.5"/><path d="M123.0 206.5 Q126.0 211.0 129.0 206.5"/></g></g></svg></div>
   <a class="skip" href="#stage">Pular para o conteúdo</a>
 
   <header class="shell" data-shell>
-    <a class="wordmark" href="#top" data-to-top aria-label="Essência Serrana, início">
+    <a class="wordmark" href="index.html" aria-label="Essência Serrana, ateliê">
       <span class="wordmark-name">Essência Serrana</span>
       <span class="wordmark-rule" aria-hidden="true"></span>
       <span class="wordmark-fine">Ateliê<span class="wm-long"> &amp; Saboaria</span></span>
@@ -24,130 +42,62 @@
     <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span class="sr">Menu</span></button>
     <nav class="site-nav" id="site-nav" aria-label="Principal">
       <ol class="nav-index">
-        <li><a href="https://www.instagram.com/essenciaserrana/" target="_blank" rel="noopener"><span class="nav-num">01</span><span class="nav-label">Ateliê</span></a></li>
-        <li><a href="#top" aria-current="page"><span class="nav-num">02</span><span class="nav-label">Galeria</span></a></li>
+        <li><a href="index.html" aria-current="page"><span class="nav-num">01</span><span class="nav-label">Ateliê</span></a></li>
+        <li><a href="galeria.html"><span class="nav-num">02</span><span class="nav-label">Galeria</span></a></li>
         <li><a href="https://www.instagram.com/essenciaserrana/" target="_blank" rel="noopener"><span class="nav-num">03</span><span class="nav-label">Instagram</span></a></li>
       </ol>
       <div class="nav-secondary">
-        <a class="link-button" href="https://www.instagram.com/essenciaserrana/" target="_blank" rel="noopener">Encomendas</a>
+        <a class="link-button" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendas</a>
         <a class="link-button" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Contato</a>
       </div>
     </nav>
   </header>
 
-  <main id="stage" class="stage">
-    <h1 class="sr">Galeria: velas aromáticas, sabonetes artesanais e imagens em gesso pintadas à mão pela Essência Serrana</h1>
-
-    <!-- Sala I · Sabonetes e lembrancinhas (fotos do Instagram @essenciaserrana) -->
-    <section class="chapter" id="top" data-chapter="Sabonetes &amp; Lembrancinhas" data-ground="paper" data-scale="1.5">
-      <header class="chapter-head">
-        <p class="chapter-num"><span class="chapter-page">Galeria · </span>I</p>
-        <h2 class="chapter-title is-long"><i>Sabonetes&nbsp;&amp; Lembrancinhas</i></h2>
-        <p class="chapter-note">Sabonetes artesanais moldados e embalados à mão: edições de <i>Natal</i>, caixinhas de presente e potes de lembrancinha com olho grego, figa e pimenta.</p>
-        <p class="chapter-count">5 peças</p>
-        <p class="walk-cue"><span class="walk-cue-text walk-cue-touch">Deslize para percorrer a galeria</span><span class="walk-cue-text walk-cue-desk">Role para baixo para percorrer a galeria</span><span class="walk-cue-line" aria-hidden="true"></span></p>
-      </header>
-      <div class="wall" data-wall>
-        <svg class="bench" viewBox="0 0 250 42" aria-hidden="true"><path d="M2 4h246v6H2z M12 10v32 M238 10v32" /></svg>
-        <figure class="work" data-work data-index="1" data-title="Sabonetes de Natal" data-inches="26" data-ratio="1.333">
-          <button class="work-open" type="button" aria-label="Ver Sabonetes de Natal no Instagram"><img src="images/ig-sabonetes-natal-vermelho.jpg" alt="Três sabonetes vermelhos com detalhes dourados: uma árvore de Natal, uma barra com Papai Noel em relevo e um redondo escrito Feliz Natal, sobre uma base de madeira" width="640" height="480"></button>
-          <figcaption class="work-label"><span class="work-num">01</span><span class="work-title">Sabonetes de Natal</span><span class="work-meta">Árvore, Papai Noel e Feliz Natal</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="2" data-title="Natal Dourado" data-inches="21" data-ratio="1.132">
-          <button class="work-open" type="button" aria-label="Ver Natal Dourado no Instagram"><img src="images/ig-sabonetes-natal-dourado.jpg" alt="Três sabonetes dourados cintilantes: Papai Noel em relevo, árvore de Natal e guirlanda com laço" width="360" height="318"></button>
-          <figcaption class="work-label"><span class="work-num">02</span><span class="work-title">Natal Dourado</span><span class="work-meta">Sabonetes com brilho dourado</span></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="3" data-title="Caixinhas de Presente" data-inches="30" data-ratio="0.667">
-          <button class="work-open" type="button" aria-label="Ver Caixinhas de Presente no Instagram"><img src="images/ig-caixinhas-presente.jpg" alt="Três sabonetes em caixinhas com palha e laço, cada um com a etiqueta Essência: um dourado com mandala, um azul de olho grego e um rosa em forma de flor" width="350" height="525"></button>
-          <figcaption class="work-label"><span class="work-num">03</span><span class="work-title">Caixinhas de Presente</span><span class="work-meta">Mandala, olho grego e flor</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="4" data-title="Potes de Lembrancinha" data-inches="30" data-ratio="0.613">
-          <button class="work-open" type="button" aria-label="Ver Potes de Lembrancinha no Instagram"><img src="images/ig-potes-lembrancinha.jpg" alt="Quatro potes de lembrancinha com sabonetes coloridos, em amarelo, verde, azul e vermelho, com etiquetas Essência Serrana e amuletos" width="288" height="470"></button>
-          <figcaption class="work-label"><span class="work-num">04</span><span class="work-title">Potes de Lembrancinha</span><span class="work-meta">Pequenos detalhes, grandes sentimentos</span></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="5" data-title="Pote Olho Grego" data-inches="32" data-ratio="0.564">
-          <button class="work-open" type="button" aria-label="Ver Pote Olho Grego no Instagram"><img src="images/ig-pote-olho-grego.jpg" alt="Pote estampado com olhos gregos, cheio de sabonetes azuis, com laço, figa dourada, pimenta vermelha e etiqueta Essência Serrana" width="361" height="640"></button>
-          <figcaption class="work-label"><span class="work-num">05</span><span class="work-title">Pote Olho Grego</span><span class="work-meta">Com figa e pimenta</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
+  <main id="stage" class="stage stage-index">
+    <section class="home">
+      <div class="home-copy">
+        <h1 class="home-title"><span class="home-title-line">Ateliê&nbsp;&amp;</span><span class="home-title-line home-title-line-2">Saboaria</span></h1>
+        <p class="home-fine">Essência Serrana</p>
+        <div class="home-about">
+          <p class="eyebrow">Sobre o ateliê</p>
+          <p>Nascida na Serra Catarinense, a Essência Serrana é um ateliê e saboaria onde cada peça é feita à mão, sem pressa: sabonetes moldados e embalados um a um, velas aromáticas e imagens em gesso pintadas com cuidado em cada detalhe.</p>
+          <p>Artesanal, natural e com afeto. Peças para a sua casa, para presentear e para celebrar datas especiais. Aceitamos encomendas, personalizamos lembrancinhas e fazemos envios.</p>
+        </div>
+        <a class="cta" href="galeria.html"><span class="cta-fill" aria-hidden="true"></span><span class="cta-label">Entrar na galeria</span><span class="cta-arrow" aria-hidden="true">&rarr;</span></a>
       </div>
-    </section>
-
-    <!-- Sala II · Velas (ilustrações provisórias: trocar por fotos reais) -->
-    <section class="chapter" data-chapter="Velas Aromáticas" data-ground="moss" data-scale="1.5">
-      <header class="chapter-head">
-        <p class="chapter-num"><span class="chapter-page">Galeria · </span>II</p>
-        <h2 class="chapter-title"><i>Velas Aromáticas</i></h2>
-        <p class="chapter-count">3 peças</p>
-        <p class="walk-cue"><span class="walk-cue-text walk-cue-touch">Deslize para percorrer a galeria</span><span class="walk-cue-text walk-cue-desk">Role para baixo para percorrer a galeria</span><span class="walk-cue-line" aria-hidden="true"></span></p>
-      </header>
-      <div class="wall" data-wall>
-        <svg class="bench" viewBox="0 0 250 42" aria-hidden="true"><path d="M2 4h246v6H2z M12 10v32 M238 10v32" /></svg>
-        <figure class="work" data-work data-index="6" data-title="Vela em Pote" data-inches="24" data-ratio="0.8">
-          <button class="work-open" type="button" aria-label="Ver Vela em Pote"><img src="images/vela-pote.svg" alt="Ilustração de uma vela aromática em pote" width="800" height="1000"></button>
-          <figcaption class="work-label"><span class="work-num">06</span><span class="work-title">Vela em Pote</span><span class="work-meta">Vela aromática · feita à mão</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="7" data-title="Trio de Aromas" data-inches="24" data-ratio="1.444">
-          <button class="work-open" type="button" aria-label="Ver Trio de Aromas"><img src="images/trio-velas.svg" alt="Ilustração de três velas aromáticas em pote" width="1300" height="900"></button>
-          <figcaption class="work-label"><span class="work-num">07</span><span class="work-title">Trio de Aromas</span><span class="work-meta">Velas aromáticas</span></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="8" data-title="Vela de Natal" data-inches="32" data-ratio="0.75">
-          <button class="work-open" type="button" aria-label="Ver Vela de Natal"><img src="images/vela-natal.svg" alt="Ilustração de uma vela vermelha de Natal acesa" width="900" height="1200"></button>
-          <figcaption class="work-label"><span class="work-num">08</span><span class="work-title">Vela de Natal</span><span class="work-meta">Edição de fim de ano</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Sala III · Gesso (fotos do Instagram; o santuário é ilustração provisória) -->
-    <section class="chapter" data-chapter="Gesso Pintado à Mão" data-ground="ink" data-scale="1.5">
-      <header class="chapter-head">
-        <p class="chapter-num"><span class="chapter-page">Galeria · </span>III</p>
-        <h2 class="chapter-title is-long"><i>Gesso Pintado à Mão</i></h2>
-        <p class="chapter-count">4 peças · aceitamos encomenda</p>
-        <p class="walk-cue"><span class="walk-cue-text walk-cue-touch">Deslize para percorrer a galeria</span><span class="walk-cue-text walk-cue-desk">Role para baixo para percorrer a galeria</span><span class="walk-cue-line" aria-hidden="true"></span></p>
-      </header>
-      <div class="wall" data-wall>
-        <svg class="bench" viewBox="0 0 250 42" aria-hidden="true"><path d="M2 4h246v6H2z M12 10v32 M238 10v32" /></svg>
-        <figure class="work" data-work data-index="9" data-title="Presépio Natalino" data-inches="26" data-ratio="0.978">
-          <button class="work-open" type="button" aria-label="Ver Presépio Natalino no Instagram"><img src="images/ig-presepio-natalino.jpg" alt="Presépio em cinco painéis de gesso pintados à mão, com a Sagrada Família ao centro e os reis magos e o pastor nos lados" width="360" height="368"></button>
-          <figcaption class="work-label"><span class="work-num">09</span><span class="work-title">Presépio Natalino</span><span class="work-meta">Cinco painéis em gesso</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="10" data-title="Presépio Completo" data-inches="34" data-ratio="0.939">
-          <button class="work-open" type="button" aria-label="Ver Presépio Completo no Instagram"><img src="images/ig-presepio-completo.jpg" alt="Presépio completo em gesso pintado à mão: Maria, José, o Menino, anjo com faixa Gloria, os três reis magos, pastor, burrinho, boi e ovelha" width="601" height="640"></button>
-          <figcaption class="work-label"><span class="work-num">10</span><span class="work-title">Presépio Completo</span><span class="work-meta">Sagrada Família, anjo, reis magos e animais</span></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="11" data-title="Presépio Vermelho e Ouro" data-inches="34" data-ratio="0.964">
-          <button class="work-open" type="button" aria-label="Ver Presépio Vermelho e Ouro no Instagram"><img src="images/ig-presepio-reis-magos.jpg" alt="Presépio em gesso com mantos vermelhos e ornamentos dourados: Maria com o Menino, José e os três reis magos" width="617" height="640"></button>
-          <figcaption class="work-label"><span class="work-num">11</span><span class="work-title">Presépio Vermelho e Ouro</span><span class="work-meta">Maria, José e os reis magos</span><a class="work-buy" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Encomendar</a></figcaption>
-        </figure>
-        <figure class="work" data-work data-index="12" data-title="Santuário" data-inches="30" data-ratio="0.783">
-          <button class="work-open" type="button" aria-label="Ver Santuário"><img src="images/santuario.svg" alt="Ilustração de um santuário de madeira com uma imagem de Nossa Senhora" width="900" height="1150"></button>
-          <figcaption class="work-label"><span class="work-num">12</span><span class="work-title">Santuário</span><span class="work-meta">Gesso pintado à mão</span></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="gallery-end" aria-label="Fim da galeria">
-      <p class="gallery-end-kicker">Fim da galeria</p>
-      <p class="gallery-end-count">Feito à mão na Serra Catarinense</p>
-      <div class="gallery-end-actions">
-        <a class="pill pill-ink" href="https://ig.me/m/essenciaserrana" target="_blank" rel="noopener">Fazer uma encomenda</a>
-        <a class="pill" href="#top" data-to-top>Voltar ao início</a>
-      </div>
-      <p class="gallery-end-credit"><a href="https://www.instagram.com/essenciaserrana/" target="_blank" rel="noopener">@essenciaserrana · Ateliê e Saboaria Artesanal</a></p>
+      <figure class="home-figure" data-depth>
+        <span class="home-frame" data-depth-layer="1.6" aria-hidden="true"></span>
+        <div class="home-logo" data-depth-layer="0.8" role="img" aria-label="Logo da Essência Serrana: araucária sobre a serra, com uma pinha, e as palavras Essência Serrana, Ateliê e Saboaria, Artesanal, Natural, Afeto">
+          <svg class="es-emblem" viewBox="0 0 240 216" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <g class="es-serra" fill="none" stroke="#c9b79a" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round">
+    <path class="es-draw" pathLength="1" d="M8 176 L44 134 L58 146 L80 116 L104 150"/>
+    <path class="es-draw" pathLength="1" d="M136 150 L158 114 L174 134 L190 120 L232 176"/>
+    <path class="es-draw" pathLength="1" d="M80 116 L74 132 L84 128 L90 140"/>
+    <path class="es-draw" pathLength="1" d="M158 114 L164 128 L156 126 L152 138"/>
+  </g>
+  <g class="es-tree">
+    <path class="es-trunk" fill="#3e4733" d="M117.6 192 L119.2 34 L120.8 34 L122.4 192 Z"/>
+    <g class="es-branches" fill="none" stroke="#3e4733" stroke-width="2" stroke-linecap="round"><path class="es-draw" pathLength="1" d="M120 61.4 Q114.9 57.4 103.0 48.0"/><path class="es-draw" pathLength="1" d="M120 61.4 Q125.1 57.4 137.0 48.0"/><path class="es-draw" pathLength="1" d="M120 76.7 Q109.8 72.7 86.0 62.0"/><path class="es-draw" pathLength="1" d="M120 76.7 Q130.2 72.7 154.0 62.0"/><path class="es-draw" pathLength="1" d="M120 72.8 Q117.0 68.8 110.0 60.0"/><path class="es-draw" pathLength="1" d="M120 72.8 Q123.0 68.8 130.0 60.0"/><path class="es-draw" pathLength="1" d="M120 94.0 Q105.0 90.0 70.0 78.0"/><path class="es-draw" pathLength="1" d="M120 94.0 Q135.0 90.0 170.0 78.0"/><path class="es-draw" pathLength="1" d="M120 90.0 Q112.5 86.0 95.0 76.0"/><path class="es-draw" pathLength="1" d="M120 90.0 Q127.5 86.0 145.0 76.0"/><path class="es-draw" pathLength="1" d="M120 112.1 Q100.8 108.1 56.0 95.0"/><path class="es-draw" pathLength="1" d="M120 112.1 Q139.2 108.1 184.0 95.0"/><path class="es-draw" pathLength="1" d="M120 108.2 Q108.0 104.2 80.0 93.0"/><path class="es-draw" pathLength="1" d="M120 108.2 Q132.0 104.2 160.0 93.0"/><path class="es-draw" pathLength="1" d="M120 126.0 Q105.0 122.0 70.0 110.0"/><path class="es-draw" pathLength="1" d="M120 126.0 Q135.0 122.0 170.0 110.0"/></g>
+    <g class="es-crown" fill="#3e4733"><g class="es-tuft" style="--i:0" transform-origin="120.0 30.0"><circle cx="120.0" cy="30.0" r="9.0"/><circle cx="113.3" cy="33.1" r="6.1"/><circle cx="126.8" cy="33.1" r="6.1"/><circle cx="120.0" cy="25.1" r="5.4"/></g><g class="es-tuft" style="--i:1" transform-origin="103.0 44.0"><circle cx="103.0" cy="44.0" r="8.0"/><circle cx="97.0" cy="46.8" r="5.4"/><circle cx="109.0" cy="46.8" r="5.4"/><circle cx="103.0" cy="39.6" r="4.8"/></g><g class="es-tuft" style="--i:2" transform-origin="137.0 44.0"><circle cx="137.0" cy="44.0" r="8.0"/><circle cx="131.0" cy="46.8" r="5.4"/><circle cx="143.0" cy="46.8" r="5.4"/><circle cx="137.0" cy="39.6" r="4.8"/></g><g class="es-tuft" style="--i:3" transform-origin="86.0 58.0"><circle cx="86.0" cy="58.0" r="9.0"/><circle cx="79.3" cy="61.1" r="6.1"/><circle cx="92.8" cy="61.1" r="6.1"/><circle cx="86.0" cy="53.0" r="5.4"/></g><g class="es-tuft" style="--i:4" transform-origin="154.0 58.0"><circle cx="154.0" cy="58.0" r="9.0"/><circle cx="147.3" cy="61.1" r="6.1"/><circle cx="160.8" cy="61.1" r="6.1"/><circle cx="154.0" cy="53.0" r="5.4"/></g><g class="es-tuft" style="--i:5" transform-origin="110.0 56.0"><circle cx="110.0" cy="56.0" r="6.5"/><circle cx="105.1" cy="58.3" r="4.4"/><circle cx="114.9" cy="58.3" r="4.4"/><circle cx="110.0" cy="52.4" r="3.9"/></g><g class="es-tuft" style="--i:6" transform-origin="130.0 56.0"><circle cx="130.0" cy="56.0" r="6.5"/><circle cx="125.1" cy="58.3" r="4.4"/><circle cx="134.9" cy="58.3" r="4.4"/><circle cx="130.0" cy="52.4" r="3.9"/></g><g class="es-tuft" style="--i:7" transform-origin="70.0 74.0"><circle cx="70.0" cy="74.0" r="9.5"/><circle cx="62.9" cy="77.3" r="6.5"/><circle cx="77.1" cy="77.3" r="6.5"/><circle cx="70.0" cy="68.8" r="5.7"/></g><g class="es-tuft" style="--i:8" transform-origin="170.0 74.0"><circle cx="170.0" cy="74.0" r="9.5"/><circle cx="162.9" cy="77.3" r="6.5"/><circle cx="177.1" cy="77.3" r="6.5"/><circle cx="170.0" cy="68.8" r="5.7"/></g><g class="es-tuft" style="--i:9" transform-origin="95.0 72.0"><circle cx="95.0" cy="72.0" r="7.5"/><circle cx="89.4" cy="74.6" r="5.1"/><circle cx="100.6" cy="74.6" r="5.1"/><circle cx="95.0" cy="67.9" r="4.5"/></g><g class="es-tuft" style="--i:10" transform-origin="145.0 72.0"><circle cx="145.0" cy="72.0" r="7.5"/><circle cx="139.4" cy="74.6" r="5.1"/><circle cx="150.6" cy="74.6" r="5.1"/><circle cx="145.0" cy="67.9" r="4.5"/></g><g class="es-tuft" style="--i:11" transform-origin="56.0 91.0"><circle cx="56.0" cy="91.0" r="9.0"/><circle cx="49.3" cy="94.2" r="6.1"/><circle cx="62.8" cy="94.2" r="6.1"/><circle cx="56.0" cy="86.0" r="5.4"/></g><g class="es-tuft" style="--i:12" transform-origin="184.0 91.0"><circle cx="184.0" cy="91.0" r="9.0"/><circle cx="177.3" cy="94.2" r="6.1"/><circle cx="190.8" cy="94.2" r="6.1"/><circle cx="184.0" cy="86.0" r="5.4"/></g><g class="es-tuft" style="--i:13" transform-origin="80.0 89.0"><circle cx="80.0" cy="89.0" r="8.0"/><circle cx="74.0" cy="91.8" r="5.4"/><circle cx="86.0" cy="91.8" r="5.4"/><circle cx="80.0" cy="84.6" r="4.8"/></g><g class="es-tuft" style="--i:14" transform-origin="160.0 89.0"><circle cx="160.0" cy="89.0" r="8.0"/><circle cx="154.0" cy="91.8" r="5.4"/><circle cx="166.0" cy="91.8" r="5.4"/><circle cx="160.0" cy="84.6" r="4.8"/></g><g class="es-tuft" style="--i:15" transform-origin="70.0 106.0"><circle cx="70.0" cy="106.0" r="7.5"/><circle cx="64.4" cy="108.6" r="5.1"/><circle cx="75.6" cy="108.6" r="5.1"/><circle cx="70.0" cy="101.9" r="4.5"/></g><g class="es-tuft" style="--i:16" transform-origin="170.0 106.0"><circle cx="170.0" cy="106.0" r="7.5"/><circle cx="164.4" cy="108.6" r="5.1"/><circle cx="175.6" cy="108.6" r="5.1"/><circle cx="170.0" cy="101.9" r="4.5"/></g></g>
+  </g>
+  <g class="es-ramos" fill="#7f8763" stroke="#7f8763" stroke-width="1"><path class="es-draw" pathLength="1" d="M111 199 Q86 191 58 200" fill="none"/><ellipse cx="103.1" cy="192.2" rx="5.2" ry="2" transform="rotate(35 103.1 192.2)"/><ellipse cx="103.1" cy="199.2" rx="4.6" ry="1.8" transform="rotate(-35 103.1 199.2)"/><ellipse cx="96.3" cy="190.1" rx="5.2" ry="2" transform="rotate(31 96.3 190.1)"/><ellipse cx="96.3" cy="197.1" rx="4.6" ry="1.8" transform="rotate(-31 96.3 197.1)"/><ellipse cx="89.4" cy="189.0" rx="5.2" ry="2" transform="rotate(27 89.4 189.0)"/><ellipse cx="89.4" cy="196.0" rx="4.6" ry="1.8" transform="rotate(-27 89.4 196.0)"/><ellipse cx="82.6" cy="189.3" rx="5.2" ry="2" transform="rotate(23 82.6 189.3)"/><ellipse cx="82.6" cy="196.3" rx="4.6" ry="1.8" transform="rotate(-23 82.6 196.3)"/><ellipse cx="75.7" cy="191.0" rx="5.2" ry="2" transform="rotate(19 75.7 191.0)"/><ellipse cx="75.7" cy="198.0" rx="4.6" ry="1.8" transform="rotate(-19 75.7 198.0)"/><ellipse cx="68.9" cy="193.7" rx="5.2" ry="2" transform="rotate(15 68.9 193.7)"/><ellipse cx="68.9" cy="200.7" rx="4.6" ry="1.8" transform="rotate(-15 68.9 200.7)"/><path class="es-draw" pathLength="1" d="M129 199 Q154 191 182 200" fill="none"/><ellipse cx="136.9" cy="192.2" rx="5.2" ry="2" transform="rotate(-35 136.9 192.2)"/><ellipse cx="136.9" cy="199.2" rx="4.6" ry="1.8" transform="rotate(35 136.9 199.2)"/><ellipse cx="143.7" cy="190.1" rx="5.2" ry="2" transform="rotate(-31 143.7 190.1)"/><ellipse cx="143.7" cy="197.1" rx="4.6" ry="1.8" transform="rotate(31 143.7 197.1)"/><ellipse cx="150.6" cy="189.0" rx="5.2" ry="2" transform="rotate(-27 150.6 189.0)"/><ellipse cx="150.6" cy="196.0" rx="4.6" ry="1.8" transform="rotate(27 150.6 196.0)"/><ellipse cx="157.4" cy="189.3" rx="5.2" ry="2" transform="rotate(-23 157.4 189.3)"/><ellipse cx="157.4" cy="196.3" rx="4.6" ry="1.8" transform="rotate(23 157.4 196.3)"/><ellipse cx="164.3" cy="191.0" rx="5.2" ry="2" transform="rotate(-19 164.3 191.0)"/><ellipse cx="164.3" cy="198.0" rx="4.6" ry="1.8" transform="rotate(19 164.3 198.0)"/><ellipse cx="171.1" cy="193.7" rx="5.2" ry="2" transform="rotate(-15 171.1 193.7)"/><ellipse cx="171.1" cy="200.7" rx="4.6" ry="1.8" transform="rotate(15 171.1 200.7)"/></g>
+  <g class="es-pinha"><ellipse cx="120" cy="198" rx="9.5" ry="12.5" fill="#b8955a"/><g fill="none" stroke="#8a6c3a" stroke-width="0.9"><path d="M111.0 190.0 Q114.0 194.5 117.0 190.0"/><path d="M117.0 190.0 Q120.0 194.5 123.0 190.0"/><path d="M123.0 190.0 Q126.0 194.5 129.0 190.0"/><path d="M114.0 195.5 Q117.0 200.0 120.0 195.5"/><path d="M120.0 195.5 Q123.0 200.0 126.0 195.5"/><path d="M126.0 195.5 Q129.0 200.0 132.0 195.5"/><path d="M111.0 201.0 Q114.0 205.5 117.0 201.0"/><path d="M117.0 201.0 Q120.0 205.5 123.0 201.0"/><path d="M123.0 201.0 Q126.0 205.5 129.0 201.0"/><path d="M117.0 206.5 Q120.0 211.0 123.0 206.5"/><path d="M123.0 206.5 Q126.0 211.0 129.0 206.5"/></g></g></svg>
+          <p class="logo-name" aria-hidden="true">Essência</p>
+          <p class="logo-serrana" aria-hidden="true">Serrana</p>
+          <p class="logo-atelie" aria-hidden="true">Ateliê &amp; Saboaria</p>
+          <p class="logo-diamond" aria-hidden="true">✦</p>
+          <p class="logo-tagline" aria-hidden="true">Artesanal · Natural · Afeto</p>
+        </div>
+      </figure>
     </section>
   </main>
 
-  <div class="foot">
-    <p class="where" data-where><span class="where-chapter" data-where-chapter>Sabonetes &amp; Lembrancinhas</span><span class="where-num"><span data-where-num>01</span> / 12</span></p>
-    <nav class="minimap" data-minimap aria-label="Mapa da galeria"></nav>
-  </div>
-  <nav class="pager" data-pager aria-label="Salas">
-    <button class="pager-arrow" type="button" data-room-step="-1" aria-label="Sala anterior">&larr;</button>
-    <p class="pager-count"><span data-pager-num>01</span> <span class="pager-of">/ 03</span><span class="pager-name">Sala</span></p>
-    <button class="pager-arrow" type="button" data-room-step="1" aria-label="Próxima sala">&rarr;</button>
+  <nav class="pager" aria-label="Páginas">
+    <a class="pager-arrow" href="https://www.instagram.com/essenciaserrana/" target="_blank" rel="noopener" aria-label="Instagram">&larr;</a>
+    <p class="pager-count">01 <span class="pager-of">/ 03</span><span class="pager-name">Ateliê</span></p>
+    <a class="pager-arrow" href="galeria.html" aria-label="Galeria">&rarr;</a>
   </nav>
 
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
-  <script src="js/gallery.js"></script>
+  <script src="js/atelie.js"></script>
 </body>
 </html>

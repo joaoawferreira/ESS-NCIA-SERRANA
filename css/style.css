@@ -272,3 +272,94 @@ html.walk-touch .stage { touch-action: pinch-zoom; }
 /* The header bar keeps to one line on a phone: the menu button never gives way, "& Saboaria" does. */
 @media (max-width: 899px) { .menu-button { flex: none; } }
 @media (max-width: 459px) { .wm-long { display: none; } }
+
+/* =====================================================================
+   Ateliê (página inicial): duas colunas, título à esquerda, o logo emoldurado à direita.
+   ===================================================================== */
+html.page-home { --bg: var(--paper); background: var(--paper); }
+.stage-index { min-height: 100svh; padding: var(--pad) var(--pad) var(--pad) calc(var(--nav-w) + var(--pad)); }
+.home { min-height: calc(100svh - var(--pad) * 2); display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr); align-items: center; gap: clamp(1.5rem, 4vw, 5rem); }
+.home-title { margin: 0; font-weight: 300; line-height: 0.86; letter-spacing: -0.02em; font-size: clamp(3.6rem, 7.4vw, 9rem); }
+.home-title-line { display: block; white-space: nowrap; }
+.home-title-line-2 { padding-left: 0.42em; font-style: italic; }
+.home-fine { margin: 1.1rem 0 0; font-size: 0.85rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--rose); }
+.home-about { max-width: 34ch; margin-top: clamp(1.6rem, 4.5svh, 3rem); font-size: clamp(1.05rem, 1.25vw, 1.2rem); line-height: 1.55; }
+.home-about p { margin: 0; }
+.home-about p + p { margin-top: 0.9rem; }
+.eyebrow { margin: 0 0 0.75rem !important; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.cta { position: relative; display: inline-flex; align-items: center; gap: 0.9rem; margin-top: clamp(1.6rem, 4.5svh, 3rem); padding: 0.85rem 1.6rem; border: 1px solid var(--ink); border-radius: 999px; text-decoration: none; font-size: 1.15rem; overflow: hidden; isolation: isolate; }
+.cta-fill { position: absolute; inset: 0; z-index: -1; background: var(--ink); border-radius: inherit; transform: translateY(101%); transition: transform 0.55s var(--ease); }
+.cta-label, .cta-arrow { transition: color 0.4s var(--ease), transform 0.45s var(--ease); }
+.cta:hover .cta-fill, .cta:focus-visible .cta-fill { transform: translateY(0); }
+.cta:hover .cta-label, .cta:hover .cta-arrow, .cta:focus-visible .cta-label, .cta:focus-visible .cta-arrow { color: var(--paper); }
+.cta:hover .cta-arrow { transform: translateX(4px); }
+
+.home-figure { position: relative; margin: 0; }
+.home-frame { position: absolute; inset: -14px 14px 14px -14px; border: 1px solid var(--rose-2); will-change: transform; }
+.home-logo {
+  position: relative; aspect-ratio: 3 / 2; display: grid; place-content: center; justify-items: center; text-align: center;
+  padding: clamp(1rem, 3vw, 2.5rem); background: #f8f2e8; will-change: transform;
+  box-shadow: 0 1px 2px rgb(28 18 14 / 6%), 0 24px 48px -28px rgb(28 18 14 / 22%);
+}
+.home-logo p { margin: 0; line-height: 1.1; }
+.es-emblem { display: block; width: clamp(7rem, 15vw, 15rem); height: auto; overflow: visible; }
+.logo-name { margin-top: 0.4rem !important; font-weight: 400; font-size: clamp(1.8rem, 3.6vw, 3.6rem); letter-spacing: 0.26em; margin-right: -0.26em !important; text-transform: uppercase; color: #2b2721; }
+.logo-serrana { font-weight: 500; font-size: clamp(1.05rem, 2vw, 2rem); letter-spacing: 0.5em; margin-right: -0.5em !important; text-transform: uppercase; color: #b8955a; }
+.logo-atelie { margin-top: 0.55rem !important; padding-top: 0.5rem; border-top: 1px solid rgb(184 149 90 / 45%); font-size: clamp(0.7rem, 1.05vw, 1.05rem); letter-spacing: 0.32em; margin-right: -0.32em !important; text-transform: uppercase; color: #3a352d; }
+.logo-diamond { font-size: 0.6rem; color: #b8955a; margin-top: 0.35rem !important; }
+.logo-tagline { margin-top: 0.3rem !important; font-size: clamp(0.55rem, 0.72vw, 0.75rem); letter-spacing: 0.32em; margin-right: -0.32em !important; text-transform: uppercase; color: #8b7c66; }
+
+/* Phones: the logo first, then the words, all centred (as the reference's phone home). */
+@media (max-width: 899px) {
+  .stage-index { padding: 5.5rem 1.25rem 6rem; }
+  .home { min-height: calc(100svh - 11.5rem); grid-template-columns: 1fr; align-content: center; }
+  .home-figure { order: -1; }
+  .home-frame { inset: -8px 8px 8px -8px; }
+}
+@media (max-width: 599px) {
+  .home-copy { text-align: center; }
+  .home-title { font-size: clamp(3.2rem, 15vw, 5rem); }
+  .home-title-line-2 { padding-left: 0; }
+  .home-fine { margin-top: 0.9rem; }
+  .home-about { margin-inline: auto; }
+  .home-figure { width: min(100%, calc(24svh * 1.5)); margin-inline: auto; }
+  .es-emblem { width: 34%; }
+  .logo-name { font-size: 7.6vw; }
+  .logo-serrana { font-size: 4.4vw; }
+  .logo-atelie { font-size: 2.6vw; }
+  .logo-tagline { font-size: 2vw; }
+  .page-home .pager { left: 50%; right: auto; transform: translateX(-50%); bottom: calc(0.75rem - 5px); }
+}
+
+/* ---------- The opening: the emblem draws itself, then the view flies into it ---------- */
+.intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: var(--paper); animation: intro-out 0.7s var(--ease) 2.45s forwards; }
+html.no-intro .intro { display: none; }
+.es-emblem-intro { width: min(46vmin, 340px); transform-origin: 50% 62%; animation: intro-zoom 0.9s cubic-bezier(0.7, 0, 0.84, 0) 2.25s forwards; }
+.intro .es-draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: es-draw 1.2s var(--ease-io) forwards; }
+.intro .es-serra .es-draw:nth-child(1) { animation-delay: 0.1s; }
+.intro .es-serra .es-draw:nth-child(2) { animation-delay: 0.25s; }
+.intro .es-serra .es-draw:nth-child(n+3) { animation-delay: 0.6s; animation-duration: 0.7s; }
+.intro .es-trunk { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); animation: es-grow 0.9s var(--ease) 0.35s forwards; }
+.intro .es-branches .es-draw { animation-duration: 0.7s; animation-delay: 0.8s; }
+.intro .es-tuft { transform-box: fill-box; transform-origin: center; transform: scale(0); opacity: 0; animation: es-pop 0.5s var(--ease) forwards; animation-delay: calc(1.05s + var(--i) * 45ms); }
+.intro .es-ramos, .intro .es-pinha { opacity: 0; animation: es-fade 0.6s var(--ease) 1.65s forwards; }
+.intro .es-ramos .es-draw { animation-delay: 1.65s; animation-duration: 0.6s; }
+.page-home .home { animation: home-in 1s var(--ease) 2.55s both; }
+html.no-intro .home { animation: none; }
+@keyframes es-draw { to { stroke-dashoffset: 0; } }
+@keyframes es-grow { to { transform: none; } }
+@keyframes es-pop { to { transform: none; opacity: 1; } }
+@keyframes es-fade { to { opacity: 1; } }
+@keyframes intro-zoom { to { transform: scale(7); opacity: 0; } }
+@keyframes intro-out { to { opacity: 0; visibility: hidden; } }
+@keyframes home-in { from { opacity: 0; transform: scale(1.02); } }
+@media (prefers-reduced-motion: reduce) {
+  .intro { display: none; }
+  .page-home .home { animation: none; }
+}
+.pager-arrow { text-decoration: none; }
+/* Phones and tablets: the Ateliê page can be taller than the screen, so its page arrows close the page. */
+@media (max-width: 899px) {
+  .page-home .stage-index { padding-bottom: 2rem; }
+  .page-home .pager { position: static; transform: none; justify-content: center; margin: 0 auto; padding: 0 1.25rem 1.5rem; }
+}
